@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Fotos a IPFS</title>
+</head>
+<body>
+    <h1>Subir Fotos a IPFS</h1>
+    <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Subir Foto</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        const form = document.getElementById('uploadForm');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.text();
+                console.log('Respuesta del servidor:', data); // Para depurar, muestra la respuesta del servidor en la consola
+                messageDiv.innerHTML = `<p>${data}</p>`;
+            } catch (error) {
+                console.error('Error al subir archivo:', error);
+                messageDiv.innerHTML = `<p>Error al subir archivo</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
