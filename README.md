@@ -17,5 +17,13 @@ Si necesitas actualizar npm a la última versión, puedes usar el siguiente coma
 npm install -g npm
 
 
+/////
+
+Iniciar un nuevo proyecto
+Para iniciar un nuevo proyecto en Node.js, debes crear un nuevo directorio y dentro de él inicializar el proyecto con npm:
+
+mkdir nombre-del-proyecto
+cd nombre-del-proyecto
+npm init
 
 
