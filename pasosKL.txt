@@ -1,0 +1,35 @@
+Para instalar IPFS (InterPlanetary File System) en Kali Linux, sigue estos pasos:
+
+Descargar el binario de IPFS:
+Ve a la página de lanzamientos de IPFS en GitHub y copia el enlace del último binario para Linux (normalmente un archivo tar.gz).
+https://github.com/ipfs/kubo/releases
+
+Por ejemplo, puedes usar wget para descargar el archivo. Asegúrate de reemplazar <version> con la versión actual:
+
+wget https://github.com/ipfs/go-ipfs/releases/download/v<version>/go-ipfs_v<version>_linux-amd64.tar.gz
+
+(kubo_v0.29.0_darwin-amd64.tar.gz)
+
+Extraer el archivo descargado:
+
+tar -xvzf go-ipfs_v<version>_linux-amd64.tar.gz
+
+
+Mover el binario a /usr/local/bin:
+
+cd go-ipfs
+sudo mv ipfs /usr/local/bin/
+
+
+Verificar la instalación:
+Comprueba que IPFS esté instalado correctamente ejecutando:
+
+ipfs --version
+
+
+Ejecutar el demonio de IPFS:
+Para empezar a usar IPFS, debes ejecutar su demonio:
+
+ipfs daemon
+
+
