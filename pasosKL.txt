@@ -26,6 +26,11 @@ Comprueba que IPFS esté instalado correctamente ejecutando:
 
 ipfs --version
 
+Inicializar IPFS:
+Antes de usar IPFS, necesitas inicializar el repositorio local de IPFS. Hazlo con el siguiente comando:
+
+ipfs init
+
 
 Ejecutar el demonio de IPFS:
 Para empezar a usar IPFS, debes ejecutar su demonio:
